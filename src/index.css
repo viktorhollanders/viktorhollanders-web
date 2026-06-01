@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Work Sans", sans-serif;
+	--text-fluid-title: clamp(3rem, 1dvw, 4rem);
+}
+
+@layer components {
+	.section {
+		display: flex;
+		flex-direction: column;
+		margin-top: 56px;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			margin-top: 124px;
+			gap: 56px
+		}
+	}
+}
+
+@utility text-vertical {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+
+:root {
+	font-family: "Work Sans", sans-serif;
+
+	--color-background: 255 255 255;
+
+	--color-text: 17 24 39;
+
+	--color-primary: 59 130 246;
+
+}
