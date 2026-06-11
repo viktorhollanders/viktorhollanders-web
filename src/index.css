@@ -5,6 +5,12 @@
 @theme {
 	--font-sans: "Work Sans", sans-serif;
 	--text-fluid-title: clamp(3rem, 1dvw, 4rem);
+	--color-brand-gray-900: var(--brand-gray-900);
+	--color-brand-gray-600: var(--brand-gray-600);
+	--color-brand-gray-500: var(--brand-gray-500);
+	--color-brand-gray-300: var(--brand-gray-300);
+	--color-brand-gray-100: var(--brand-gray-100);
+
 }
 
 @layer components {
@@ -30,10 +36,16 @@
 :root {
 	font-family: "Work Sans", sans-serif;
 
-	--color-background: 255 255 255;
 
-	--color-text: 17 24 39;
+	--brand-gray-900: oklch(0.3446 0 0);
+	--brand-gray-600: oklch(0.6467 0 0);
+	--brand-gray-500: oklch(0.8157 0.0022 17.2);
+	--brand-gray-300: oklch(0.8945 0 0);
+	--brand-gray-100: oklch(0.9581 0 0);
+	--color-background: oklch(1 0 0);
 
-	--color-primary: 59 130 246;
+	--color-text: oklch(0.2686 0 0);
+
+	--color-primary: oklch(0.9813 0.004 106.47);
 
 }
