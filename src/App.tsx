@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Footer } from "@/components/footer";
 import { ProjectCard } from "@/components/project-card";
 import { Projects } from "@/data/projects";
 
 export default function App() {
+	const [openProjectId, setOpenProjectId] = useState<number | null>(null);
+
 	return (
 		<div className="mx-5 mb-14 md:mb-14 mt-24 md:mt-60 md:max-w-175 md:m-auto">
 			<header className="flex flex-col gap-14 items-center md:flex-row md:justify-between">
@@ -23,19 +26,18 @@ export default function App() {
 			</header>
 
 			<section className="section">
-				<h2 className="font-medium text-[48px] md:text-vertical">About</h2>
+				<h2 className="font-medium text-[48px] md:text-vertical mb-8">About</h2>
 
-				<div className="flex flex-col gap-4 tracking-[0.04%]">
-					<p>
+				<div className="flex flex-col gap-4">
+					<p className="body-text">
 						I am a developer from Iceland with a BSc in Computer Science from
 						Reykjavik University. I have a passion for well-designed user
 						experiences that are simple and intuitive to use. I strongly believe
 						in designing with the user in mind — form follows function. Besides
-						frontend development, I am very interested in DevOps, testing, and
-						LLM tooling.
+						frontend development, I am very interested in DevOps, and creating scalable systems.
 					</p>
 
-					<p>
+					<p className="body-text">
 						I enjoy good conversations about design, tech, and life in general.
 						When I'm not grinding away at a computer designing or programming,
 						I'm out taking photos, climbing, or enjoying the wide outdoors of
@@ -46,11 +48,11 @@ export default function App() {
 			</section>
 
 			<section className="section">
-				<h2 className="font-medium text-[48px] md:text-vertical">Projects</h2>
+				<h2 className="font-medium text-[48px] md:text-vertical mb-8">Projects</h2>
 
-				<div className="flex flex-col gap-8">
+				<div className="flex flex-col gap-8 w-full">
 					{Projects.map((project) => (
-						<ProjectCard projectData={project} key={project.title} />
+						<ProjectCard projectData={project} openProjectId={openProjectId} setOpenProjectId={setOpenProjectId} key={project.id} />
 					))}
 				</div>
 			</section>

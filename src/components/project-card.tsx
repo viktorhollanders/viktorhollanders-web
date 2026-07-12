@@ -3,8 +3,14 @@ import type { Project } from "@/types/project";
 import { Tag } from "./tag";
 import { Url } from "./url";
 
-export function ProjectCard({ projectData }: { projectData: Project }) {
+export function ProjectCard({ projectData, openProjectId, setOpenProjectId }: { projectData: Project, openProjectId: number | null, setOpenProjectId: React.Dispatch<React.SetStateAction<number | null>> }) {
 	const websiteUrl = projectData.websiteUrl ? projectData.websiteUrl : "";
+	const isOpen = openProjectId === projectData.id;
+
+	function toggleProject() {
+		openProjectId !== projectData.id ? setOpenProjectId(projectData.id) : setOpenProjectId(null);
+	}
+
 	return (
 		<div>
 			<div
@@ -12,18 +18,21 @@ export function ProjectCard({ projectData }: { projectData: Project }) {
 					backgroundColor: projectData.titleBackgroundColor,
 					color: projectData.titleTextColor,
 				}}
-				className="p-3 rounded-t-2xl flex flex-row justify-between items-center"
+				className={`${!isOpen ? "rounded-2xl " : "rounded-t-2xl "} p-3 flex flex-row justify-between items-center`}
 			>
 				<h1 className="text-[28px]">{projectData.title}</h1>
-				<Minus size={35} />
+				<button type="button" onClick={toggleProject}>
+					{!isOpen ? <Plus size={35} /> : <Minus size={35} />}
+
+				</button>
 			</div>
-			<div className="flex flex-col gap-6 p-4 border-l border-r border-b rounded-b-2xl">
+			<div className={`${!isOpen ? "hidden" : "flex"} flex-col gap-6 p-4 border-l border-r border-b rounded-b-2xl`}>
 				<div className="flex flex-wrap gap-3">
 					{projectData.tags.map((tag) => (
 						<Tag key={tag} value={tag} />
 					))}
 				</div>
-				<p>{projectData.description}</p>
+				<p className="body-text">{projectData.description}</p>
 				<div>
 					{websiteUrl && <Url url={websiteUrl} key={projectData.title} />}
 				</div>

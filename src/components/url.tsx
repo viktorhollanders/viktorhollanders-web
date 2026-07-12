@@ -5,7 +5,7 @@ export function Url({ url }: { url: string }) {
 
 	return (
 		<a href={url} className="flex flex-row gap-2">
-			<p>{displayUrl}</p>
+			<p className="body-text">{displayUrl}</p>
 			<ArrowUpRight />
 		</a>
 

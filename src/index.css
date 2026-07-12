@@ -32,6 +32,10 @@
 	text-orientation: upright;
 }
 
+@utility body-text {
+	line-height: 28px;
+}
+
 
 :root {
 	font-family: "Work Sans", sans-serif;
