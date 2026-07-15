@@ -21,7 +21,7 @@ export function ProjectCard({ projectData, openProjectId, setOpenProjectId }: { 
 				className={`${!isOpen ? "rounded-2xl " : "rounded-t-2xl "} p-3 flex flex-row justify-between items-center`}
 			>
 				<h1 className="text-[28px]">{projectData.title}</h1>
-				<button type="button" onClick={toggleProject}>
+				<button type="button" onClick={toggleProject} aria-label="toggle project visibility button">
 					{!isOpen ? <Plus size={35} /> : <Minus size={35} />}
 
 				</button>
