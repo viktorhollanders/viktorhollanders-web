@@ -40,11 +40,8 @@ export default function App() {
 						</p>
 
 						<p className="body-text">
-							I enjoy good conversations about design, tech, and life in general.
-							When I'm not grinding away at a computer designing or programming,
-							I'm out taking photos, climbing, or enjoying the wide outdoors of
-							Iceland. Always up for interesting projects or a good conversation —
-							find me in the footer.
+							I enjoy good conversations about design, tech, trail running or life in general.
+							I am always up for interesting projects or a good conversation —	find me in the footer.
 						</p>
 					</div>
 				</section>
